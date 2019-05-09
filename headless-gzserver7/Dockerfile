@@ -3,6 +3,10 @@
 
 FROM gazebo:gzserver7-xenial
 
+ENV http_proxy ${http_proxy}
+ENV https_proxy ${https_proxy}
+ENV no_proxy ${no_proxy}
+
 # DEBIAN_FRONTEND=noninteractive bypasses keyboard-configuration setup
 # which is hanging ... do not know why . 
 # If you need the keybaord configuration, you can copy/create a  /etc/default/keyboard file (man keyboard)
