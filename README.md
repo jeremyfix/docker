@@ -6,9 +6,10 @@ A repository containing some dockerfiles for various usage
 
 ## Headless ubuntu servers
 
-- Running gzserver7 with xenial. Uses xserver-xorg-video-dummy as a dummy X11 server : [here](./headless-gzserver7)
+- Running gzserver7 with xenial. Uses xserver-xorg-video-dummy as a dummy X11 server embedded in the docker contrainer : [here](./headless-gzserver7)
 - Running gzserver7 with xenial and nvidia-driver support using a dummy host X11 server : [here](./headless-nvidia-gserver7-host-display)
-- Running parrot-sphinx with xenial on a nvidia GPU headless server. To come...
+- Running parrot-sphinx with xenial on a nvidia GPU headless server using a dummy host X11 server : [here](./headless-nvidia-parrot-sphinx-host-display)
+
 
 
 

@@ -52,7 +52,3 @@ To start gzserver
     [Msg] Connected to gazebo master @ http://127.0.0.1:11345
     [Msg] Publicized address: 192.168.10.79===> Starting gzserver
 
-Ressources
-==========
-
-- Parrot develop forum thread on running sphinx within a docker container : [Link](https://forum.developer.parrot.com/t/running-sphinx-inside-docker-container/9058/2)
