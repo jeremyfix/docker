@@ -9,7 +9,7 @@ Status
 - direct rendering with glxinfo : OK
 - installation of parrot-sphinx : OK
 - running of firmwared : OK?
-
+- running sphinx-server : FAIL
 
 
         make run
@@ -18,6 +18,11 @@ Status
         E firmwared_main: initial_cleanup_files scandir: No such file or directory
         I firmwared_firmwares: indexing firmwares from folder '/usr/share/firmwared/firmwares/'
         I firmwared_firmwares: done indexing firmwares
+
+        
+        root@sh15:/# sphinx-server /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/bebop2.drone 
+        gzserver: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+        Parrot-Sphinx simulator version 1.2.1
 ***
 
 This dockerfile runs gzserver on a headless server. It uses a dummy Xserver running on the host. The docker container then uses the display of the hosrt

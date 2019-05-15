@@ -15,7 +15,8 @@ RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	debconf-utils              \
     apparmor apparmor-profiles \
     apparmor-utils             \
-    kmod
+    kmod                       \
+    xauth
 
 #############
 # Apparmor
