@@ -21,7 +21,7 @@ RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 #############
 # Apparmor
 
-RUN mount -tsecurityfs securityfs /sys/kernel/security
+#RUN mount -tsecurityfs securityfs /sys/kernel/security
 
 ################################
 #   Gazebo
