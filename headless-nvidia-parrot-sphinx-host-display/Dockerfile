@@ -5,12 +5,22 @@ ENV https_proxy ${https_proxy}
 ENV no_proxy ${no_proxy}
 
 RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    apt-utils 
+
+RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     wget                       \
     software-properties-common \ 
     lsb-release                \ 
     mesa-utils                 \
-	debconf-utils
+	debconf-utils              \
+    apparmor apparmor-profiles \
+    apparmor-utils             \
+    kmod
 
+#############
+# Apparmor
+
+RUN mount -tsecurityfs securityfs /sys/kernel/security
 
 ################################
 #   Gazebo
