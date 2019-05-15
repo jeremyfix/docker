@@ -16,8 +16,8 @@ RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     apparmor apparmor-profiles \
     apparmor-utils             \
     kmod                       \
-    xauth
-
+    xauth                      \
+    libatomic1 
 #############
 # Apparmor
 
