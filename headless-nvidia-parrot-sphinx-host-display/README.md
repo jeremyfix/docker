@@ -21,14 +21,6 @@ Only what seems to be interesting parts of the logs are displayed below.
         [Dbg] [MachineManager.cc:448] anafi4k: Machine(name = "anafi4k", firmware = "http://plf.parrot.com/sphinx/firmwares/anafi/pc/latest/images/anafi-pc.ext2.zip")
         property interface = eth1
         [Msg] connected to firmwared
-        [...]
-        
-        I firmwared_instances: init_command_line: ro_boot_console = ro.boot.console=
-        I firmwared_instances: OUTER_PTS is /dev/pts/1
-        I firmwared_instances: INNER_PTS is /dev/pts/2
-        I apparmor_config: apparmor_load_profile(b6f267d639d45108d940785c5b22ade587b6f288)
-        W firmwared_log: /usr/bin/env: 'python': No such file or directory
-        W firmwared_instances: invoke_post_prepare_instance_helper failed: -125
         [....]
         [Dbg] [MachineManager.cc:806] All machines have had their properties set
         [Msg] WEB DASHBOARD IS ACCESSIBLE at http://localhost:9002
