@@ -66,9 +66,14 @@ To test glxinfo within the docker container :
     # Should output
     direct rendering: Yes
 
-To start gzserver
+To start sphinx server for anafi
 
-    make run
+    make run-anafi4k
+
+To start sphinx server for bebop2
+
+    make run-bebop2
+
 
 
 Ressources

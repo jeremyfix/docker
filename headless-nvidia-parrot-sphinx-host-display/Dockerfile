@@ -49,7 +49,7 @@ RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
 RUN bash /usr/share/gazebo/setup.sh
 
 # setup environment
-EXPOSE 11345
+# EXPOSE 11345
 
 ################################
 #   Sphinx parrot
@@ -61,13 +61,12 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 508B1AE5
 # The following lines permit to answer questions that are otherwise raised
 # during the package installation. But answering these questions during the docker image
 # build seems impossible.
-# To see the properties, install the package and then run debconf-get-selections | grep packagename
+# To see the properties, install the package and then run debconf-get-selections | grep parrot-sphinx
 RUN echo "parrot-sphinx sphinx/firmwared_users string toto" | debconf-set-selections
 RUN echo "parrot-sphinx sphinx/license_approval boolean true" | debconf-set-selections
 
 RUN apt-get update -q && DEBIAN_FRONTEND=noninteractive apt-get install -q -y \
 		parrot-sphinx
-
 
 
 ADD run.sh /run.sh

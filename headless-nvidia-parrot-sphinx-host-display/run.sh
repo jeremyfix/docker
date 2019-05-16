@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ $# -lt 2  ]
+then
+    echo "Usage $0 path_to_world path_to_drone"
+    exit 1
+fi
+
+
 set -m
 
 mkdir -p /var/cache/firmwared
@@ -9,4 +16,4 @@ mkdir -p /var/cache/firmwared/mount_points
 firmwared &
 # gzserver
 echo "===> Starting gzserver"
-sphinx /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/anafi4k.drone::stolen_interface= --log-level=dbg
+sphinx $1 $2 #--log-level=dbg
