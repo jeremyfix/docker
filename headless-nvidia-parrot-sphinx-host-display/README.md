@@ -8,68 +8,41 @@ Status
 - Installation of gzserver , running : OK
 - direct rendering with glxinfo : OK
 - installation of parrot-sphinx : OK
-- running of firmwared : OK?
-- running sphinx-server : FAIL
+- running of firmwared : OK
+- running sphinx-server : ok ? 
 
+Only what seems to be interesting parts of the logs are displayed below.
 
         make run
-        root@sh15:/# firmwared 
-        root@sh15:/# I firmwared_main: firmwared[497] starting
-        E firmwared_main: initial_cleanup_files scandir: No such file or directory
-        I firmwared_firmwares: indexing firmwares from folder '/usr/share/firmwared/firmwares/'
-        I firmwared_firmwares: done indexing firmwares
-
-        
-        root@sh15:/# sphinx-server /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/bebop2.drone 
-        [Msg] Waiting for master.
-        [Msg] Connected to gazebo master @ http://127.0.0.1:11345
-        [Msg] Publicized address: 127.0.0.1
-        [Wrn] [ColladaLoader.cc:1763] Triangle input semantic: 'TEXCOORD' is currently not supported
-        [Wrn] [ColladaLoader.cc:1763] Triangle input semantic: 'TEXCOORD' is currently not supported
-        [Wrn] [ColladaLoader.cc:1763] Triangle input semantic: 'TEXCOORD' is currently not supported
-        [Wrn] [ColladaLoader.cc:1763] Triangle input semantic: 'TEXCOORD' is currently not supported
-        [Wrn] [ColladaLoader.cc:1763] Triangle input semantic: 'TEXCOORD' is currently not supported
-        [Wrn] [ColladaLoader.cc:1763] Triangle input semantic: 'TEXCOORD' is currently not supported
+        root@sh15:/# ./run.sh 
+        [.. pretty long log....]
         [Msg] created parameter server on http:8383
+        [Dbg] [Iio.cc:33] Creating IfIio object 'iio_simulator.sock'
+        [Dbg] [MachineManager.cc:448] anafi4k: Machine(name = "anafi4k", firmware = "http://plf.parrot.com/sphinx/firmwares/anafi/pc/latest/images/anafi-pc.ext2.zip")
+        property interface = eth1
         [Msg] connected to firmwared
-        [Msg] Preparation of firmware http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/latest/images/ardrone3-milos_pc.ext2.zip
-        I shd: wind: created: generation=2 sample_count=4000 sample_size=24 sample_rate=1000 metadata_size=125
-        W firmwared_log: ls: cannot access '/usr/share/firmwared/firmwares//*.firmware': No such file or directory
-        W firmwared_log: stat: cannot stat '/usr/share/firmwared/firmwares//ardrone3-milos_pc.ext2.zip.a3223a5b-4bd8-9583-54ad-cb89d0a34087.firmware': No such file or directory
-        [Msg] preparation of firmwares http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/latest/images/ardrone3-milos_pc.ext2.zip is at 18%
-        [Msg] preparation of firmwares http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/latest/images/ardrone3-milos_pc.ext2.zip is at 82%
-        [Msg] preparation of firmwares http://plf.parrot.com/sphinx/firmwares/ardrone3/milos_pc/latest/images/ardrone3-milos_pc.ext2.zip is at 100%
-        [Msg] firmware /usr/share/firmwared/firmwares//ardrone3-milos_pc.ext2.zip.a3223a5b-4bd8-9583-54ad-cb89d0a34087.firmware supported hardwares: 
-        [Msg]   milosboard
-        I firmwared_instances: init_command_line: ro_boot_console = ro.boot.console=
-        W firmwared_log: mount: wrong fs type, bad option, bad superblock on firmwared_967aac4b1a0fc3447e9a1073392d246347a46acc,
-        W firmwared_log:        missing codepage or helper program, or other error
-        W firmwared_log: 
-        W firmwared_log:        In some cases useful info is found in syslog - try
-        W firmwared_log:        dmesg | tail or so.
-        E firmwared_instances: invoke_mount_helper init returned -125
-        W firmwared_log: umount: /var/cache/firmwared/mount_points/instances/967aac4b1a0fc3447e9a1073392d246347a46acc/union: not mounted
-        E firmwared_instances: invoke_mount_helper clean returned -125
-        E firmwared_instances: install_mount_points
-        I apparmor_config: apparmor_remove_profile(967aac4b1a0fc3447e9a1073392d246347a46acc)
-        W firmwared_log: /sbin/apparmor_parser: Unable to remove "firmwared_967aac4b1a0fc3447e9a1073392d246347a46acc".  Profile doesn't exist
-        E apparmor_config: /sbin/apparmor_parser exited with status 65024
-        E firmwared_instances: rmdir '/var/run/firmwared/967aac4b1a0fc3447e9a1073392d246347a46acc/udev' error 2
-        E firmwared_instances: rmdir '/var/run/firmwared/967aac4b1a0fc3447e9a1073392d246347a46acc' error 2
-        E firmwared_instances: invoke_mount_helper clean_extra returned -125
-        E firmwared_instances: invoke_mount_helper clean returned -125
-        E firmwared_instances: init_instance: mount.hook/init failed.
-        E firmwared_instances: instance_new(26b4c9adaa72df04d7821f9442cf04112232f549): Unknown error 1026
-        E firmwared_commands: command_process: mount.hook/init failed.
-        [Err] [Machine.cc:1256] Received error while preparing instance for machine bebop2: mount.hook/init failed.
-        [Msg] CleanupInstances
-        I firmwared_command_dropall: instances dropped 0/0
-        [Msg] CleanupFirmwares
-        [Msg] Firmware risible_bellatrix[26b4c9adaa72df04d7821f9442cf04112232f549] unprepared (unmounted)
-        I shd: wind: closed
-
-
+        [...]
         
+        I firmwared_instances: init_command_line: ro_boot_console = ro.boot.console=
+        I firmwared_instances: OUTER_PTS is /dev/pts/1
+        I firmwared_instances: INNER_PTS is /dev/pts/2
+        I apparmor_config: apparmor_load_profile(b6f267d639d45108d940785c5b22ade587b6f288)
+        W firmwared_log: /usr/bin/env: 'python': No such file or directory
+        W firmwared_instances: invoke_post_prepare_instance_helper failed: -125
+        [....]
+        [Dbg] [MachineManager.cc:806] All machines have had their properties set
+        [Msg] WEB DASHBOARD IS ACCESSIBLE at http://localhost:9002
+        I firmwared_instances: launch_instance "/usr/share/firmwared/firmwares//anafi-pc.ext2.zip.34b8603f-cc3e-4bc2-8bbc-c4b1df6ef0ed.firmware"
+        W firmwared_log: modprobe: ERROR: ../libkmod/libkmod.c:586 kmod_search_moddep() could not open moddep file '/lib/modules/4.4.0-140-generic/modules.dep.bin'
+        W firmwared_log: modprobe: FATAL: Module ifb not found in directory /lib/modules/4.4.0-140-generic
+        E firmwared_instances: invoke_net_helper config returned -125
+        [Msg] Instance risible_stephanie[b6f267d639d45108d940785c5b22ade587b6f288] started
+        [Msg] All drones instantiated
+        W firmwared_log: Cannot find device "fd_veth0"
+        [.....]
+        [Dbg] [PompPool.cc:87] seqnum '4294967295' not found in pomp pool
+        [Dbg] [Firmwared.cc:183] OnInstanceDead
+        [Dbg] [PompPool.hh:173] PompRequest 4294967295 not found
 ***
 
 This dockerfile runs gzserver on a headless server. It uses a dummy Xserver running on the host. The docker container then uses the display of the hosrt
