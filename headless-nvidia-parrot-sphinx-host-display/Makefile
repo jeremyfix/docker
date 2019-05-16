@@ -15,6 +15,7 @@ run:
 		-e NVIDIA_PATH=${NVIDIA_PATH}                 \
 		-v ${NVIDIA_PATH}:${NVIDIA_PATH}:ro           \
 		-v ${tmp_dir}:/tmp                            \
+		-v /lib/modules:/lib/modules                  \
 		-t nvidia-parrot-sphinx                       \
 		/bin/bash
 

@@ -24,18 +24,11 @@ Only what seems to be interesting parts of the logs are displayed below.
         [....]
         [Dbg] [MachineManager.cc:806] All machines have had their properties set
         [Msg] WEB DASHBOARD IS ACCESSIBLE at http://localhost:9002
-        I firmwared_instances: launch_instance "/usr/share/firmwared/firmwares//anafi-pc.ext2.zip.34b8603f-cc3e-4bc2-8bbc-c4b1df6ef0ed.firmware"
-        W firmwared_log: modprobe: ERROR: ../libkmod/libkmod.c:586 kmod_search_moddep() could not open moddep file '/lib/modules/4.4.0-140-generic/modules.dep.bin'
-        W firmwared_log: modprobe: FATAL: Module ifb not found in directory /lib/modules/4.4.0-140-generic
-        E firmwared_instances: invoke_net_helper config returned -125
-        [Msg] Instance risible_stephanie[b6f267d639d45108d940785c5b22ade587b6f288] started
-        [Msg] All drones instantiated
-        W firmwared_log: Cannot find device "fd_veth0"
-        [.....]
-        [Dbg] [PompPool.cc:87] seqnum '4294967295' not found in pomp pool
-        [Dbg] [Firmwared.cc:183] OnInstanceDead
-        [Dbg] [PompPool.hh:173] PompRequest 4294967295 not found
-***
+
+         
+        
+        
+        ***
 
 This dockerfile runs gzserver on a headless server. It uses a dummy Xserver running on the host. The docker container then uses the display of the hosrt
 
