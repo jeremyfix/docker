@@ -6,7 +6,7 @@ build:
 	docker build --network host --build-arg http_proxy=${http_proxy} --build-arg https_proxy=${https_proxy} --build-arg no_proxy=${no_proxy} -t nvidia-parrot-sphinx .
 
 run:
-	sudo xhost +
+	#sudo xhost +
 	docker run -it --rm --privileged --runtime=nvidia \
 		--env="DISPLAY" \
 		--env="QT_X11_NO_MITSHM=1" \
