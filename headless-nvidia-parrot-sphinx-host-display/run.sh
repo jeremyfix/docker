@@ -14,6 +14,6 @@ mount -ttmpfs tmpfs /var/cache/firmwared
 mount -tsecurityfs securityfs /sys/kernel/security
 mkdir -p /var/cache/firmwared/mount_points
 firmwared &
-# gzserver
-echo "===> Starting gzserver"
-sphinx $1 $2 #--log-level=dbg
+
+echo "===> Starting sphinx_server"
+sphinx-server $1 $2 #--log-level=dbg
