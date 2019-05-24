@@ -40,7 +40,6 @@ run-anafi4k:
 		-v ${NVIDIA_PATH}:${NVIDIA_PATH}:ro           \
 		-v ${tmp_dir}:/tmp                            \
 		-v /lib/modules:/lib/modules                  \
-		${NVIDIA_DEVICE}  ${CUDA_LIBS} ${NVIDIA_LIBS}  \
 		-t nvidia-parrot-sphinx                       \
 		/run.sh /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/anafi4k.drone::stolen_interface=::simple_front_cam=0 
 
