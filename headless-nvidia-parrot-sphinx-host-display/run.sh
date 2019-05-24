@@ -16,4 +16,5 @@ mkdir -p /var/cache/firmwared/mount_points
 firmwared &
 
 echo "===> Starting sphinx_server"
+#sphinx-server $1 $2 --port-forwarding=$3 #--log-level=dbg
 sphinx-server $1 $2 #--log-level=dbg

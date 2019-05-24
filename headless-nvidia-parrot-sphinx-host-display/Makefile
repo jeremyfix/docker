@@ -1,5 +1,6 @@
 
 NVIDIA_PATH:=/usr/lib/nvidia-410
+IP:=192.168.10.79
 tmp_dir:=/tmp
 
 build:
@@ -19,6 +20,15 @@ bash:
 		-t nvidia-parrot-sphinx                       \
 		/bin/bash
 
+NVIDIA_DEVICE := $(shell ls /dev/nvidia* | xargs -I{} echo '--device={}') 
+CUDA_LIBS := $(shell ls /usr/lib/x86_64-linux-gnu/libcuda* | xargs -I{} echo '-v {}:{}:ro')
+NVIDIA_LIBS := $(shell ls /usr/lib/x86_64-linux-gnu/libnvidia* | xargs -I{} echo '-v {}:{}:ro')
+
+test:
+	@echo ${NVIDIA_DEVICE}
+	@echo ${CUDA_LIBS}
+	@echo ${NVIDIA_LIBS}
+
 run-anafi4k:
 	#sudo xhost +
 	docker run -it --rm --privileged --runtime=nvidia \
@@ -30,8 +40,9 @@ run-anafi4k:
 		-v ${NVIDIA_PATH}:${NVIDIA_PATH}:ro           \
 		-v ${tmp_dir}:/tmp                            \
 		-v /lib/modules:/lib/modules                  \
+		${NVIDIA_DEVICE}  ${CUDA_LIBS} ${NVIDIA_LIBS}  \
 		-t nvidia-parrot-sphinx                       \
-		/run.sh /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/anafi4k.drone::stolen_interface= 
+		/run.sh /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/anafi4k.drone::stolen_interface=::simple_front_cam=0 
 
 run-bebop2:
 	#sudo xhost +
@@ -44,8 +55,9 @@ run-bebop2:
 		-v ${NVIDIA_PATH}:${NVIDIA_PATH}:ro           \
 		-v ${tmp_dir}:/tmp                            \
 		-v /lib/modules:/lib/modules                  \
+		${NVIDIA_DEVICE}  ${CUDA_LIBS} ${NVIDIA_LIBS}  \
 		-t nvidia-parrot-sphinx                       \
-		/run.sh /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/bebop2.drone::stolen_interface= 
+		/run.sh /opt/parrot-sphinx/usr/share/sphinx/worlds/outdoor_1.world /opt/parrot-sphinx/usr/share/sphinx/drones/bebop2.drone::stolen_interface=::with_front_cam=false 
 
 
 glxinfo:
